@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Document>
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="expanded landing__section">
+    <div class="container">
+        <div class="expanded__inner">
+            <div class="expanded__media">
+                <img src="~/images/undraw_frameworks.svg" class="expanded__image">
+            </div>
+            <div class="expanded__content">
+                <h2 class="expanded__title">Framework agnostic. Your front-end setup, your choice.</h2>
+                @foreach (var item in Model)
+                {
+                    <p>
+                        @item.Name
+                    </p>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br /><br />
