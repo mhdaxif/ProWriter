@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProWriter.Web.Controllers
 {
+    [Route("documents")]
     public class DocumentsController : Controller
     {
         private AppDbContext _context;
@@ -23,6 +24,7 @@ namespace ProWriter.Web.Controllers
             return View(list);
         }
 
+        [HttpGet("detail")]
         public IActionResult Detail(int id)
         {
             var ent = _context.Documents.FirstOrDefault(x => x.Id == id);
@@ -31,14 +33,14 @@ namespace ProWriter.Web.Controllers
         }
 
         [HttpGet("create")]
-        public ActionResult Post()
+        public ActionResult Create()
         {
             var model = new Document();
             return View(model);
         }
 
         [HttpPost("create")]
-        public ActionResult Post(Document model)
+        public ActionResult Create(Document model)
         {
             if (ModelState.IsValid == false)
             {
