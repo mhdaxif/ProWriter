@@ -8,37 +8,35 @@ using System.Threading.Tasks;
 
 namespace ProWriter.Web.Controllers
 {
-    public class DocumentsController : Controller
+    public class ProjectsController : Controller
     {
         private AppDbContext _context;
 
-        public DocumentsController(AppDbContext context)
+        public ProjectsController(AppDbContext context)
         {
             _context = context;
         }
 
         public IActionResult Index()
         {
-            var list = _context.Documents.ToList();
+            var list = _context.Projects.ToList();
             return View(list);
         }
 
         public IActionResult Detail(int id)
         {
-            var ent = _context.Documents.FirstOrDefault(x => x.Id == id);
-
-            return View(ent);
+            return View();
         }
 
         [HttpGet("create")]
         public ActionResult Post()
         {
-            var model = new Document();
+            var model = new Project();
             return View(model);
         }
 
         [HttpPost("create")]
-        public ActionResult Post(Document model)
+        public ActionResult Post(Project model)
         {
             if (ModelState.IsValid == false)
             {
@@ -53,10 +51,10 @@ namespace ProWriter.Web.Controllers
         {
             try
             {
-                var ent = _context.Documents.FirstOrDefault(x => x.Id == id);
+                var ent = _context.Projects.FirstOrDefault(x => x.Id == id);
                 if (ent != null)
                 {
-                    _context.Documents.Remove(ent);
+                    _context.Projects.Remove(ent);
 
                     await _context.SaveChangesAsync();
                 }
@@ -68,8 +66,9 @@ namespace ProWriter.Web.Controllers
                 throw;
             }
         }
-         
-        //public override Task<IActionResult> Put(int id, [FromBody] Document dbEntity)
+
+
+        //public override Task<IActionResult> Put(int id, [FromBody] Project dbEntity)
         //{
         //    return base.Put(id, dbEntity);
         //}
