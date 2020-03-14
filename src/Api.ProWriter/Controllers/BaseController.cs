@@ -25,18 +25,20 @@ namespace Api.ProWriter.Controllers
             _dbSet = dbSet;
         }
 
-        //[HttpGet("")]
-        virtual public IActionResult Index()
+        [HttpGet("")]
+        virtual public IActionResult Get()
         {
             var data = _dbSet.AsNoTracking();
             return Ok(data);
         }
 
         [HttpGet("{id}")]
-        virtual public IActionResult Index(int id)
+        virtual public async Task<IActionResult> Get(int id)
         {
-            var result = _dbSet.AsNoTracking().Where(c => c.Id == id);
-            return Ok(result);
+            var dbEntity = await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbEntity == null) return NotFound();
+             
+            return Ok(dbEntity);
         }
 
         [HttpPut("{id}")]
@@ -86,11 +88,11 @@ namespace Api.ProWriter.Controllers
             return _dbSet.Any(e => e.Id == id);
         }
 
-        protected Guid UserId
+        protected int UserId
         {
             get
             {
-                Guid.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out Guid val);
+                int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int val);
 
                 return val;
             }
