@@ -12,7 +12,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\ProWriter.Data\ProWriter.Data.csproj" />
+    <ProjectReference Include="..\Data.ProWriter\Data.ProWriter.csproj" />
   </ItemGroup>
 
 </Project>

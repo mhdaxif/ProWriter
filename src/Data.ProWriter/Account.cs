@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProWriter.Data
+namespace Data.ProWriter
 {
     public class User : Entity
     {

@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProWriter.Data;
+using Data.ProWriter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProWriter.Web
+namespace Web.ProWriter
 {
     public class AppDbContext : DbContext
     {

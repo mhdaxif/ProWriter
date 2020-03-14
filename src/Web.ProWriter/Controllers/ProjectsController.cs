@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProWriter.Data;
+using Data.ProWriter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProWriter.Web.Controllers
+namespace Web.ProWriter.Controllers
 {
     public class ProjectsController : Controller
     {

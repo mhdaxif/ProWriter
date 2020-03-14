@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ProWriter.Data
+namespace Data.ProWriter
 {
     public class Project : Entity
     {

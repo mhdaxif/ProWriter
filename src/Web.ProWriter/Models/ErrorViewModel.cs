@@ -1,6 +1,6 @@
 using System;
 
-namespace ProWriter.Web.Models
+namespace Web.ProWriter.Models
 {
     public class ErrorViewModel
     {

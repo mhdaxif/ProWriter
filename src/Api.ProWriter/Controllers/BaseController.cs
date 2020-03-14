@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ProWriter.Data;
+using Data.ProWriter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace ProWriter.Web.Controllers
+ 
+namespace Api.ProWriter.Controllers
 {
     [ApiController, Route("api/[controller]"), AllowAnonymous]
     public class BaseController<Db, Ent> : Controller 

@@ -1,4 +1,4 @@
-﻿namespace ProWriter.Data
+﻿namespace Data.ProWriter
 {
     public class UserSharedProject 
     {
