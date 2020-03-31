@@ -318,6 +318,11 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# ignore sqllite database file
+*.db
+*.db-shm
+*.db-wal
+
 # OpenCover UI analysis results
 OpenCover/
 
@@ -336,5 +341,4 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
-# BeatPulse healthcheck temp database
-healthchecksdb
+ 

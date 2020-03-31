@@ -28,7 +28,7 @@ namespace Api.ProWriter
         {
             // MSSQL server  
             services.AddDbContext<AppDbContext>(options =>
-               options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+               options.UseSqlite(Configuration["ConnectionStrings:DefaultConnection"]));
 
 
             // Allow anything till prod 
